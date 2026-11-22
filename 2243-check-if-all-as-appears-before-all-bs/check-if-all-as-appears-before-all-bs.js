@@ -3,5 +3,16 @@
  * @return {boolean}
  */
 var checkString = function(s) {
-    return !s.includes("ba");
+    let seenB = false;
+
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === "b") {
+            seenB = true;
+        } else if (seenB) {
+            
+            return false;
+        }
+    }
+
+    return true;
 };
